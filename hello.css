@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    color:black;
+    text-align: center;
+    padding-top: 60px 
+}
+.Landingsection {
+    font-family: 'Gugi', cursive;
+    background-color: blue;
+    height: 110vh;
+    background-image: url(Images/wave.jpg);
+    background-size: cover;
+    background-position:  center;
+    
+    text-align: center;
+}
+img {
+    height: 100px;
+    border-radius: 10px
+}
+#header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80pt;
+    color: cornflowerblue;
+    text-align: center;
+}
+
+.secondsection {
+    background-image: url(Images/p.jpg);
+    height: 110vh;
+    
+    background-size: cover;
+    background-position:  center;
+    background-attachment: fixed;
+    text-align: center;
+    
+}
+    
+.thirdsection {
+    background-image: url(Images/wave.jpg);
+    height: 110vh;
+    background-size: cover;
+    background-position:  center;
+    text-align: center;
+    }
+
