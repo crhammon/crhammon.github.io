@@ -1,0 +1,53 @@
+/* This is acommend */
+
+#landingpage {
+    background-image: url(../Images/p.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+        
+}
+
+#header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80pt;
+    color: cornflowerblue;
+    text-align: center;
+    
+}
+
+#text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+    color: cornflowerblue;
+    text-align: center;
+    
+    
+}
+
+/* navbar */
+.navbar a:hover{
+    background-color: white;
+}
+
+.navbar{
+    font-family: "Roboto”, sans-serif;
+    font-weight: 700;
+    overflow: hidden;
+    background-color: transparent;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar to the top of the page */
+    width: 100%; /* Full width */
+    z-index: 100;
+    font-size: 30px;
+}
+
+/* Links inside the navbar */
+.navbar a{
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+
