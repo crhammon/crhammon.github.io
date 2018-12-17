@@ -1,7 +1,8 @@
 /* This is acommend */
 
 #landingpage {
-    background-image: url(../Images/p.jpg);
+    /* background-image: url(../Images/p.jpg); */
+    background-image: url("https://crhammond.github.io/Images/p.jpg"
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
