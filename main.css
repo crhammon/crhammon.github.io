@@ -1,7 +1,7 @@
 /* This is acommend */
 
 #landingpage {
-    background-image: url(../Images/p.jpg);
+    background-image: url("p.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
