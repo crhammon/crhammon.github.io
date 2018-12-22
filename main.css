@@ -33,8 +33,15 @@
 #text {
     font-family: var(--main-font);    font-size: 12pt;
     color: black;
-    text-align: center;   
+    text-align: left;  
+    width: 50%;
+    display: inline-block;
 }
+
+#wrapper1 {
+    text-align: center;  
+}
+
 
 /* navbar */
     
