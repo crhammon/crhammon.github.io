@@ -7,14 +7,22 @@
 :root {
   --main-font:'Titillium Web', sans-serif;
 }
+
 #landingpage {
-    background-image: url("p.jpg");
+    /*background-image: url("p.jpg");
     background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     overflow: scroll;
         
 }
+
+
+#landingpage1 {
+    overflow: scroll;
+        
+}
+
 
 #header {
     font-family: var(--main-font);
@@ -25,17 +33,59 @@
     
 }
 
+#header2 {
+    font-family: var(--main-font);
+    font-size: 20pt;
+    color: black;
+    text-align: center;
+    font-weight: 2000;
+    
+}
+
+#author {
+    font-family: var(--main-font);    
+    font-size: 12pt;
+    color: black;
+    text-align: center;  
+    width: 50%;
+    display: inline-block;
+    font-style: normal;
+    
+}
+
 #UCDAVIS {
     text-align: center;
     
 }
 
 #text {
-    font-family: var(--main-font);    font-size: 12pt;
+    font-family: var(--main-font);    
+    font-size: 11pt;
     color: black;
     text-align: left;  
     width: 50%;
     display: inline-block;
+}
+
+#text2 {
+    font-family: var(--main-font);    
+    font-size: 11pt;
+    color: black;
+    text-align: left;  
+    width: 100%;
+    display: inline-block;
+}
+
+#text_poem {
+    font-family: var(--main-font);    
+    font-size: 12pt;
+    color: black;
+    text-align: center;  
+    width: 30%;
+    display: inline-block;
+    font-style: italic;
+
+    
 }
 
 #wrapper1 {
@@ -46,7 +96,8 @@
 /* navbar */
     
 nav {
-  font-family: var(--main-font);  font-size: 50px;
+  font-family: var(--main-font);  
+  font-size: 50px;
   text-align: center;
   
 }
@@ -61,8 +112,23 @@ ul {
   list-style-type: armenian;
   display: block;
   font-family: var(--main-font);
-    font-size: 12pt;
+  font-size: 11pt;
+  font-style: normal;
+    font-weight: 100;
 }
+
+.interests {
+  padding: 0px;
+  list-style-type: armenian;
+  display: block;
+  font-family: var(--main-font);
+  font-size: 11pt;
+  font-style: normal;
+  font-weight: 100;
+  text-align: center;
+      
+}
+
 
 
 li {
