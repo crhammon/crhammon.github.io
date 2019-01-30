@@ -73,7 +73,17 @@
     color: black;
     text-align: left;  
     width: 100%;
-    display: inline-block;
+    display: inline;
+}
+
+#textHWLIST {
+    padding: 0px;
+  list-style-type: armenian;
+  display: block;
+  font-family: var(--main-font);
+  font-size: 11pt;
+  font-style: normal;
+    font-weight: 100;
 }
 
 #text_poem {
@@ -117,6 +127,16 @@ ul {
     font-weight: 100;
 }
 
+.Homeworks {
+  padding: 0px;
+  list-style-type: armenian;
+  display: block;
+  font-family: var(--main-font);
+  font-size: 15pt;
+  font-style: normal;
+    font-weight: 100;
+}
+
 .interests {
   padding: 0px;
   list-style-type: armenian;
@@ -143,8 +163,9 @@ li a {
 }
 
 
-nav li a:hover, nav li a:active {
-  background-color: var(--main-color);
+
+li a:hover, nav li a:active {
+  font-weight:bold;
 }
 
 

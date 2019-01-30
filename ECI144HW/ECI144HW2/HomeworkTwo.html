@@ -1,0 +1,347 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>HomeworkTwo</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-01-29"><meta name="DC.source" content="HomeworkTwo.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Problem 2</a></li><li><a href="#3">Problem 4</a></li><li><a href="#4">Problem 6</a></li></ul></div><pre class="codeinput"><span class="comment">% HW2 ECI 144 Due Jan 30th, 2019</span>
+</pre><h2 id="2">Problem 2</h2><pre class="codeinput">clc, clear
+
+SandNum=12;
+
+<span class="comment">% Sand 1</span>
+
+q1 = [0.624,1.33,2.08,2.47,2.63,3.78,4.06,4.24,4.82,5.09]; <span class="comment">% Specific Discharge (mm/s)</span>
+
+H1i= [1.11,2.36,4,4.9,5.01,7.63,8.13,8.58,9.86,10.89]; <span class="comment">% Inlet Head (m)</span>
+
+H1o = zeros(1,length(H1i)); <span class="comment">% Outlet Head (m)</span>
+
+delta_h1_dl=-1*(H1o-H1i)./0.58;
+
+tbl1 = table(delta_h1_dl',q1',<span class="string">'VariableNames'</span>,{<span class="string">'minus_gradient'</span>,<span class="string">'q'</span>});
+
+lm1 = fitlm(tbl1,<span class="string">'linear'</span>,<span class="string">'Intercept'</span>,false);
+
+x=[0:0.1:19];
+
+fit=lm1.Coefficients{1,1}.*x;
+
+
+
+
+
+
+<span class="comment">% Sand 2</span>
+
+q2 = [3.26,3.17,3.12,3.01,3.14,2.58,2.1,1.7,1.37,1.5,0.78,0.719]; <span class="comment">% Specific Discharge (mm/s)</span>
+
+H2i = [9.48,12.88,9.8,12.87,12.8,8.86,12.84,6.71,12.81,5.58,2.98,12.86]; <span class="comment">% Inlet Head (m)</span>
+
+H2o = [-3.6,0,-2.78,0.46,0.49,-0.83,4.4,0,7.03,0,0,9.88]; <span class="comment">% Outlet Head (m)</span>
+
+delta_h2_dl=-1*(H2o-H2i)./1.1;
+
+tbl2 = table(delta_h2_dl',q2',<span class="string">'VariableNames'</span>,{<span class="string">'minus_gradient'</span>,<span class="string">'q'</span>});
+
+lm2 = fitlm(tbl2,<span class="string">'linear'</span>,<span class="string">'Intercept'</span>,false);
+
+x2=[0:0.1:12];
+
+fit2=lm2.Coefficients{1,1}.*x2;
+
+
+hold <span class="string">on</span>
+
+
+
+    plot(delta_h1_dl,q1, <span class="string">'kv'</span>)
+    plot(delta_h2_dl,q2, <span class="string">'k+'</span>)
+
+    plot(x2,fit2,<span class="string">'k--'</span>)
+    plot(x,fit,<span class="string">'k--'</span>)
+
+    text(3.3,4,<span class="string">'y_1=0.2850x, R_1^2=0.9933'</span>)
+    text(9,2,<span class="string">'y_2=0.2753x, R_2^2=0.9943'</span>)
+
+
+
+    legend(<span class="string">'Sand 2'</span>,<span class="string">'Linear Model'</span>, <span class="string">'location'</span>,<span class="string">'NW'</span>)
+
+    legend(<span class="string">'Sand 1'</span>,<span class="string">'Sand 2'</span>)
+
+
+xlabel(<span class="string">'$\frac{-dH}{dl}$'</span>, <span class="string">'Interpreter'</span>,<span class="string">'latex'</span>,<span class="string">'FontSize'</span>,20)
+
+
+ylabel(<span class="string">'Specific Discharge (mm/s)'</span>, <span class="string">'Interpreter'</span>,<span class="string">'latex'</span>,<span class="string">'FontSize'</span>,15)
+
+ax = gca;
+
+<span class="comment">% c = ax.Color;</span>
+<span class="comment">% ax.Color = 'blue';</span>
+<span class="comment">%</span>
+<span class="comment">% ax.FontSize = 14</span>
+</pre><img vspace="5" hspace="5" src="HomeworkTwo_01.png" alt=""> <h2 id="3">Problem 4</h2><pre class="codeinput">clear,clc
+data=[4.3e-4, 6.1e-3, 2.5e-5, 1.2e-4, 1.0e-6, 7.1e-3, 9.1e-6, 2.2e-3, 4.2e-5,8.7e-4, 3.5e-5];
+
+mean(data)
+geomean(data)
+harmmean(data)
+</pre><pre class="codeoutput">ans =
+    0.0015
+ans =
+   1.5702e-04
+ans =
+   9.0547e-06
+</pre><h2 id="4">Problem 6</h2><pre class="codeinput">clear,clc
+
+ss = [4.75, 2, 0.84, 0.425, 0.25, 0.106, 0.0750, 0.045, 0.011];  <span class="comment">% in mm</span>
+mass_retained_sample_A = [49.9, 36.5, 42.1, 40, 23, 11, 10.2, 5, 3];     <span class="comment">% g</span>
+mrsA=mass_retained_sample_A;
+mass_retained_sample_B = [9.9, 46.5, 52.1, 86.2, 80, 25.3, 20.2, 10, 1]; <span class="comment">% g</span>
+mrsB=mass_retained_sample_B;
+mass_retained_sample_C = [16.6, 88, 207, 35.2, 8.3, 3, 0.5, 0.2, 0.1];   <span class="comment">% g</span>
+mrsC=mass_retained_sample_C;
+
+<span class="keyword">for</span> k=2:length(mass_retained_sample_A)
+
+    mrsA(k)=mrsA(k-1)+mass_retained_sample_A(k);
+    mrsB(k)=mrsB(k-1)+mass_retained_sample_B(k);
+    mrsC(k)=mrsC(k-1)+mass_retained_sample_C(k);
+<span class="keyword">end</span>
+
+percent_finerA = 1 - mrsA/sum(mass_retained_sample_A);
+percent_finerB = 1 - mrsB/sum(mass_retained_sample_B)
+percent_finerC = 1 - mrsC/sum(mass_retained_sample_C);
+
+<span class="comment">%cA=polyfit(fliplr(ss), fliplr(percent_finerA),2);</span>
+
+<span class="comment">%x=[0:.01:5];</span>
+
+<span class="comment">%funA=cA(1).*x.^3+cA(2).*x.^2+cA(3).*x+cA(4);</span>
+<span class="comment">%funA=cA(1).*x.^2+cA(2).*x.^1+cA(3);</span>
+clf
+hold <span class="string">on</span>
+
+semilogx(fliplr(ss),fliplr(percent_finerA),<span class="string">'kv-'</span>)
+semilogx(fliplr(ss),fliplr(percent_finerB),<span class="string">'k+-'</span>)
+semilogx(fliplr(ss),fliplr(percent_finerC),<span class="string">'ks-'</span>)
+
+
+<span class="comment">%semilogx(x,funA,'k-')</span>
+set(gca, <span class="string">'XDir'</span>,<span class="string">'reverse'</span>,<span class="string">'GridAlpha'</span>,1,<span class="string">'MinorGridAlpha'</span>,1)
+set(gca,<span class="string">'minorgridlinestyle'</span>,<span class="string">'-'</span>)
+set(gca, <span class="string">'XScale'</span>, <span class="string">'log'</span>);
+grid <span class="string">on</span>
+xlabel(<span class="string">'Grain Size (mm)'</span>)
+ylabel(<span class="string">'Percent Finer by Weight'</span>)
+
+legend(<span class="string">'Sand A'</span>,<span class="string">'Sand B'</span>,<span class="string">'Sand C'</span>)
+</pre><pre class="codeoutput">percent_finerB =
+  Columns 1 through 7
+    0.9701    0.8297    0.6724    0.4121    0.1706    0.0942    0.0332
+  Columns 8 through 9
+    0.0030         0
+</pre><img vspace="5" hspace="5" src="HomeworkTwo_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+% HW2 ECI 144 Due Jan 30th, 2019
+
+%% Problem 2
+clc, clear
+
+SandNum=12;
+
+% Sand 1
+
+q1 = [0.624,1.33,2.08,2.47,2.63,3.78,4.06,4.24,4.82,5.09]; % Specific Discharge (mm/s)
+
+H1i= [1.11,2.36,4,4.9,5.01,7.63,8.13,8.58,9.86,10.89]; % Inlet Head (m)
+
+H1o = zeros(1,length(H1i)); % Outlet Head (m)
+
+delta_h1_dl=-1*(H1o-H1i)./0.58;
+
+tbl1 = table(delta_h1_dl',q1','VariableNames',{'minus_gradient','q'});
+
+lm1 = fitlm(tbl1,'linear','Intercept',false);
+
+x=[0:0.1:19];
+
+fit=lm1.Coefficients{1,1}.*x;
+
+
+
+
+
+
+% Sand 2
+
+q2 = [3.26,3.17,3.12,3.01,3.14,2.58,2.1,1.7,1.37,1.5,0.78,0.719]; % Specific Discharge (mm/s)
+
+H2i = [9.48,12.88,9.8,12.87,12.8,8.86,12.84,6.71,12.81,5.58,2.98,12.86]; % Inlet Head (m)
+
+H2o = [-3.6,0,-2.78,0.46,0.49,-0.83,4.4,0,7.03,0,0,9.88]; % Outlet Head (m)
+
+delta_h2_dl=-1*(H2o-H2i)./1.1;
+
+tbl2 = table(delta_h2_dl',q2','VariableNames',{'minus_gradient','q'});
+
+lm2 = fitlm(tbl2,'linear','Intercept',false);
+
+x2=[0:0.1:12];
+
+fit2=lm2.Coefficients{1,1}.*x2;
+
+
+hold on
+
+
+    
+    plot(delta_h1_dl,q1, 'kv')
+    plot(delta_h2_dl,q2, 'k+')
+    
+    plot(x2,fit2,'kREPLACE_WITH_DASH_DASH')
+    plot(x,fit,'kREPLACE_WITH_DASH_DASH')
+    
+    text(3.3,4,'y_1=0.2850x, R_1^2=0.9933')
+    text(9,2,'y_2=0.2753x, R_2^2=0.9943')
+    
+    
+    
+    legend('Sand 2','Linear Model', 'location','NW')
+    
+    legend('Sand 1','Sand 2')
+    
+
+xlabel('$\frac{-dH}{dl}$', 'Interpreter','latex','FontSize',20)
+
+
+ylabel('Specific Discharge (mm/s)', 'Interpreter','latex','FontSize',15)
+
+ax = gca;
+
+% c = ax.Color;
+% ax.Color = 'blue';
+% 
+% ax.FontSize = 14
+
+
+%% Problem 4
+clear,clc
+data=[4.3e-4, 6.1e-3, 2.5e-5, 1.2e-4, 1.0e-6, 7.1e-3, 9.1e-6, 2.2e-3, 4.2e-5,8.7e-4, 3.5e-5];
+
+mean(data)
+geomean(data)
+harmmean(data)
+
+%% Problem 6
+clear,clc
+
+ss = [4.75, 2, 0.84, 0.425, 0.25, 0.106, 0.0750, 0.045, 0.011];  % in mm
+mass_retained_sample_A = [49.9, 36.5, 42.1, 40, 23, 11, 10.2, 5, 3];     % g 
+mrsA=mass_retained_sample_A;
+mass_retained_sample_B = [9.9, 46.5, 52.1, 86.2, 80, 25.3, 20.2, 10, 1]; % g
+mrsB=mass_retained_sample_B;
+mass_retained_sample_C = [16.6, 88, 207, 35.2, 8.3, 3, 0.5, 0.2, 0.1];   % g
+mrsC=mass_retained_sample_C;
+
+for k=2:length(mass_retained_sample_A)
+    
+    mrsA(k)=mrsA(k-1)+mass_retained_sample_A(k);
+    mrsB(k)=mrsB(k-1)+mass_retained_sample_B(k);
+    mrsC(k)=mrsC(k-1)+mass_retained_sample_C(k);
+end
+
+percent_finerA = 1 - mrsA/sum(mass_retained_sample_A);
+percent_finerB = 1 - mrsB/sum(mass_retained_sample_B)
+percent_finerC = 1 - mrsC/sum(mass_retained_sample_C);
+
+%cA=polyfit(fliplr(ss), fliplr(percent_finerA),2);
+
+%x=[0:.01:5];
+ 
+%funA=cA(1).*x.^3+cA(2).*x.^2+cA(3).*x+cA(4);
+%funA=cA(1).*x.^2+cA(2).*x.^1+cA(3);
+clf
+hold on
+
+semilogx(fliplr(ss),fliplr(percent_finerA),'kv-')
+semilogx(fliplr(ss),fliplr(percent_finerB),'k+-')
+semilogx(fliplr(ss),fliplr(percent_finerC),'ks-')
+
+
+%semilogx(x,funA,'k-')
+set(gca, 'XDir','reverse','GridAlpha',1,'MinorGridAlpha',1)
+set(gca,'minorgridlinestyle','-')
+set(gca, 'XScale', 'log');
+grid on
+xlabel('Grain Size (mm)')
+ylabel('Percent Finer by Weight')
+
+legend('Sand A','Sand B','Sand C')
+
+##### SOURCE END #####
+--></body></html>
