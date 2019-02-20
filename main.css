@@ -76,6 +76,15 @@
     display: inline;
 }
 
+#text3 {
+    font-family: var(--main-font);    
+    font-size: 11pt;
+    color: black;
+    text-align: left;  
+    width: 10%;
+    display: inline;
+}
+
 #textHWLIST {
     padding: 0px;
   list-style-type: armenian;
@@ -99,8 +108,24 @@
 }
 
 #wrapper1 {
-    text-align: center;  
+    text-align: center;
+    width: 1000px;
+    margin: auto;
 }
+
+#bio pictures {
+    
+    text-align: center;
+    width: 1000px;
+    margin: auto;
+    border: 1px solid #73AD21;
+    align-content: center;
+    margin: auto;
+}
+
+
+
+
 
 
 /* navbar */
