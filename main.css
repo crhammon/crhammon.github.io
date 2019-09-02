@@ -100,7 +100,7 @@
     font-size: 12pt;
     color: black;
     text-align: center;  
-    width: 30%;
+    width: 100%;
     display: inline-block;
     font-style: italic;
 
@@ -109,7 +109,7 @@
 
 #wrapper1 {
     text-align: center;
-    width: 1000px;
+    width: 60%;
     margin: auto;
 }
 
@@ -124,7 +124,12 @@
 }
 
 
-
+.flex-container {
+  display: flex;
+    width: 90%;
+    justify-content: flex-start;
+  align-items: center;
+}
 
 
 
@@ -143,6 +148,30 @@ ul {
 }
 
 .courses {
+  padding: 0px;
+  list-style-type: armenian;
+  display: block;
+  font-family: var(--main-font);
+  font-size: 11pt;
+  font-style: normal;
+    font-weight: 100;
+}
+
+.courses2 {
+  padding-left: 10%;
+  list-style-type: armenian;
+  list-style-position: inside;
+  display: inline-block;
+  font-family: var(--main-font);
+  font-size: 11pt;
+  font-style: normal;
+  font-weight: 100;
+  text-align: left;
+    width: 100%;
+}
+
+
+.quick facts {
   padding: 0px;
   list-style-type: armenian;
   display: block;
@@ -199,6 +228,13 @@ li a:hover, nav li a:active {
   float: left;
   width: 33.33%;
 }
+.column2 {
+  text-align: left;
+  float: center;
+  width: 33.33%;
+  padding-left: 10%;
+    
+}
 
 .column_sem {
   text-align: center;
@@ -230,6 +266,13 @@ li a:hover, nav li a:active {
 
 }
 
+#QuickFacts {
+    font-family: var(--main-font);
+    font-weight: bold;
+    font-size: 15pt;
+    padding: 0px 0px;
+
+}
 #courseheader_semester {
     font-family: var(--main-font);
     font-weight: bold;
