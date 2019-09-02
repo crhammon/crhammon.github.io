@@ -149,7 +149,6 @@ ul {
 
 .courses {
   padding: 0px;
-  list-style-type: armenian;
   display: block;
   font-family: var(--main-font);
   font-size: 11pt;
@@ -168,6 +167,31 @@ ul {
   font-weight: 100;
   text-align: left;
     width: 100%;
+}
+
+.courses3 {
+  padding: 10px;
+  list-style-type: armenian;
+  list-style-position: inside;
+  display: inline-block;
+  font-family: var(--main-font);
+  font-size: 11pt;
+  font-style: normal;
+  font-weight: 100;
+  text-align: center;
+    width: 100%;
+}
+
+article {
+  float: center;
+  padding-left: 0%;
+  width: 70%;
+  background-color: white;
+  height: 300px; /* only for demonstration, should be removed */
+    margin-left: auto;
+margin-right: auto;
+    font-family: var(--main-font);
+  font-size: 11pt;
 }
 
 
@@ -264,6 +288,18 @@ li a:hover, nav li a:active {
     font-size: 15pt;
     padding: 0px 0px;
 
+}
+
+.BlogList {
+  font-family: var(--main-font);
+  text-align: center;
+  content: "";
+  display: table;
+  clear: both;
+  line-height: 10px;
+  align-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 #QuickFacts {
