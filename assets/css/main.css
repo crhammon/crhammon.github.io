@@ -3320,7 +3320,7 @@ input, select, textarea {
 		box-shadow: 0 0.075em 0.35em 0 rgba(0, 0, 0, 0.125);
 		list-style: none;
 		margin-top: calc(-0.25em + 1px);
-		min-width: 12em;
+		min-width: none;
 		padding: 0.25em 0;
 	}
 
@@ -3415,7 +3415,7 @@ input, select, textarea {
 					#header nav ul li a, #header nav ul li span {
 						border: 0;
 						color: inherit;
-						display: inline-block;
+						display: block;
 						height: inherit;
 						line-height: inherit;
 						outline: 0;
